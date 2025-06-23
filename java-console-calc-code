@@ -1,1 +1,57 @@
 
+package simple_calculator;
+import java.util.Scanner;
+public class Calculator {
+	public static void main(String [] args) {
+	Scanner input = new Scanner(System.in);
+	int choice;
+	do {
+	System.out.println("Enter the first number " + ":");
+	int a = input.nextInt();
+	System.out.println("Select the operator " + ":");
+	char op = input.next().charAt(0);
+	System.out.println("Enter the second number " + ":");
+	int b = input.nextInt();
+	int result = 0;
+	boolean valid = true;
+	switch(op) {
+	case'+':
+		result = add(a,b);
+		break;
+	case '-':
+		result = subtract(a,b);
+		break;
+	case '*':
+		result = multiplication(a,b);
+		break;
+	case '/':
+		result = division(a,b);
+		break;
+	default:
+		System.out.println("Invalid operator ");
+		valid = false;
+	}
+	if(valid) {
+		System.out.println("Result " + " : " + result );
+	}
+	System.out.println("Do you want to perform another calculation ");
+	choice = input.nextInt();	
+}
+	while (choice == 1);
+	input.close();
+	System.out.println("Calculator closed ");
+	
+	}
+	public static int  add(int a , int b) {
+		return a + b;
+	}
+	public static int subtract(int a , int b) {
+		return a - b;
+	}
+	public static int multiplication(int a , int b) {
+		return a * b;
+	}
+	public static int division(int a , int b) {1
+		return a / b;
+	}
+}
